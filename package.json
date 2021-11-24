@@ -16,5 +16,9 @@
     "coverage": "jest --coverage",
     "watchAll": "jest --watchAll",
     "watch": "jest --watch"
+  },
+  "dependencies": {
+    "axios": "^0.24.0",
+    "create-react-app": "^4.0.3"
   }
 }
