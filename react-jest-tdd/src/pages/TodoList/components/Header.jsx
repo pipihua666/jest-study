@@ -11,10 +11,18 @@ class Header extends Component {
     })
   }
 
+  handleKeyDown = e => {
+    if (e.keyCode === 13 && this.state.value) {
+      this.props.addUndoItem(this.state.value)
+      this.setState({ value: '' })
+    }
+  }
+
   render() {
     return (
       <div>
         <input
+          onKeyUp={this.handleKeyDown}
           data-test="input"
           value={this.state.value}
           onChange={this.handleChange}
