@@ -15,6 +15,6 @@ it('删除UndoList项，项目要减少', () => {
   const fn = jest.fn()
   const wrapper = shallow(<UndoList list={arr} onDeleteItem={fn} />)
   const deleteItems = findElementByTag(wrapper, 'delete')
-  deleteItems.at(1).invoke('onClick')
-  expect(fn).toBeCalledWith(2)
+  deleteItems.at(1).simulate('click')
+  expect(fn).toHaveBeenCalledWith(1)
 })
